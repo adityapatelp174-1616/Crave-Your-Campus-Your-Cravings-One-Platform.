@@ -1,0 +1,2912 @@
+/* CRAVE CAMPUS - SINGLE CSS FILE
+   This file combines all page styles. Use the section headings below to navigate. */
+/* PAGE VISIBILITY: the page router shows only the selected screen. */
+/* Styles the elements matching: .page-view */
+.page-view {
+    /* Controls how this element is laid out or shown. */
+    display: none;
+}
+
+/* Styles the elements matching: .page-view.active */
+.page-view.active {
+    /* Controls how this element is laid out or shown. */
+    display: block;
+}
+
+/* ==========================================================================
+   HOMEPAGE, RESTAURANTS, CART AND RESPONSIVE LAYOUT
+   Original styles retained; grouped here to make each visual section easy to find.
+   ========================================================================== */
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap");
+/* Styles the elements matching: :root */
+:root {
+    /* Stores the shared design value named orange. */
+    --orange: #ef704c;
+    /* Stores the shared design value named dark. */
+    --dark: #292725;
+    /* Stores the shared design value named cream. */
+    --cream: #fff9f4;
+    /* Stores the shared design value named grey. */
+    --grey: #77716d;
+    /* Stores the shared design value named white. */
+    --white: #fff;
+    /* Stores the shared design value named line. */
+    --line: #efe6df;
+    /* Stores the shared design value named soft. */
+    --soft: #fff1e9;
+    /* Stores the shared design value named shadow. */
+    --shadow: 0 18px 50px rgba(41,39,37,.08);
+    /* Stores the shared design value named radius. */
+    --radius: 22px;
+}
+
+/* Styles the elements matching: * */
+* {
+    /* Sets the box sizing property for this rule. */
+    box-sizing: border-box;
+}
+
+/* Styles the elements matching: html */
+html {
+    /* Sets the scroll behavior property for this rule. */
+    scroll-behavior: smooth;
+    /* Sets the scroll padding top property for this rule. */
+    scroll-padding-top: 90px;
+}
+
+/* Styles the elements matching: body */
+body {
+    /* Sets the outside spacing around the element. */
+    margin: 0;
+    /* Sets the background colour or image. */
+    background: var(--cream);
+    /* Sets the text colour. */
+    color: var(--dark);
+    /* Chooses the typeface. */
+    font-family: "DM Sans",Arial,sans-serif;
+    /* Sets the vertical spacing between lines. */
+    line-height: 1.55;
+}
+
+/* Styles the elements matching: a */
+a {
+    /* Sets the text colour. */
+    color: inherit;
+}
+
+/* Styles the elements matching: button,input */
+button,input {
+    /* Sets the font property for this rule. */
+    font: inherit;
+}
+
+/* Styles the elements matching: button */
+button {
+    /* Sets the mouse pointer appearance. */
+    cursor: pointer;
+}
+
+/* Styles the elements matching: .topbar */
+.topbar {
+    /* Sets the element height. */
+    height: 82px;
+    /* Sets the inside spacing around the element. */
+    padding: 0 7.5%;
+    /* Controls how this element is laid out or shown. */
+    display: flex;
+    /* Aligns items along the cross axis. */
+    align-items: center;
+    /* Distributes items along the main axis. */
+    justify-content: space-between;
+    /* Sets spacing between layout items. */
+    gap: 25px;
+    /* Sets the background colour or image. */
+    background: rgba(255,255,255,.88);
+    /* Sets the backdrop filter property for this rule. */
+    backdrop-filter: blur(18px);
+    /* Sets the border bottom property for this rule. */
+    border-bottom: 1px solid rgba(239,112,76,.09);
+    /* Controls the element positioning method. */
+    position: sticky;
+    /* Sets the top property for this rule. */
+    top: 0;
+    /* Controls stacking order. */
+    z-index: 20;
+}
+
+/* Styles the elements matching: .logo */
+.logo {
+    /* Chooses the typeface. */
+    font-family: Manrope,sans-serif;
+    /* Sets the text size. */
+    font-size: 30px;
+    /* Sets how bold the text appears. */
+    font-weight: 800;
+    /* Sets the letter spacing property for this rule. */
+    letter-spacing: -2px;
+    /* Sets the text decoration property for this rule. */
+    text-decoration: none;
+}
+
+/* Styles the elements matching: .logo span,.partners-heading h2 span */
+.logo span,.partners-heading h2 span {
+    /* Sets the text colour. */
+    color: var(--orange);
+}
+
+/* Styles the elements matching: .main-nav,.nav-actions */
+.main-nav,.nav-actions {
+    /* Controls how this element is laid out or shown. */
+    display: flex;
+    /* Aligns items along the cross axis. */
+    align-items: center;
+    /* Sets spacing between layout items. */
+    gap: 27px;
+}
+
+/* Styles the elements matching: .main-nav a,.text-link */
+.main-nav a,.text-link {
+    /* Sets the text size. */
+    font-size: 13px;
+    /* Sets how bold the text appears. */
+    font-weight: 700;
+    /* Sets the text decoration property for this rule. */
+    text-decoration: none;
+    /* Sets the text colour. */
+    color: #5e5853;
+    /* Defines how a visual change animates. */
+    transition: color .2s;
+}
+
+/* Styles the elements matching: .main-nav a:hover,.text-link:hover */
+.main-nav a:hover,.text-link:hover {
+    /* Sets the text colour. */
+    color: var(--orange);
+}
+
+/* Styles the elements matching: .nav-actions */
+.nav-actions {
+    /* Sets spacing between layout items. */
+    gap: 17px;
+}
+
+/* Styles the elements matching: .nav-register */
+.nav-register {
+    /* Sets the inside spacing around the element. */
+    padding: 11px 18px;
+    /* Rounds the element corners. */
+    border-radius: 30px;
+    /* Sets the background colour or image. */
+    background: var(--dark);
+    /* Sets the text colour. */
+    color: #fff;
+    /* Sets the text decoration property for this rule. */
+    text-decoration: none;
+    /* Sets the text size. */
+    font-size: 13px;
+    /* Sets how bold the text appears. */
+    font-weight: 700;
+}
+
+/* Styles the elements matching: .cart-button,.orange-button */
+.cart-button,.orange-button {
+    /* Sets the element border. */
+    border: 0;
+    /* Sets the background colour or image. */
+    background: var(--orange);
+    /* Sets the text colour. */
+    color: white;
+    /* Rounds the element corners. */
+    border-radius: 13px;
+    /* Sets the inside spacing around the element. */
+    padding: 13px 18px;
+    /* Sets how bold the text appears. */
+    font-weight: 800;
+    /* Sets the text decoration property for this rule. */
+    text-decoration: none;
+    /* Adds a shadow around the element. */
+    box-shadow: 0 8px 20px #ef704c38;
+    /* Defines how a visual change animates. */
+    transition: transform .2s,box-shadow .2s;
+}
+
+/* Styles the elements matching: .cart-button:hover,.orange-button:hover */
+.cart-button:hover,.orange-button:hover {
+    /* Moves, rotates or scales the element. */
+    transform: translateY(-3px);
+    /* Adds a shadow around the element. */
+    box-shadow: 0 12px 25px #ef704c55;
+}
+
+/* Styles the elements matching: .cart-button span */
+.cart-button span {
+    /* Controls how this element is laid out or shown. */
+    display: inline-grid;
+    /* Sets the place items property for this rule. */
+    place-items: center;
+    /* Sets the margin left property for this rule. */
+    margin-left: 5px;
+    /* Sets the element width. */
+    width: 23px;
+    /* Sets the element height. */
+    height: 23px;
+    /* Rounds the element corners. */
+    border-radius: 50%;
+    /* Sets the background colour or image. */
+    background: white;
+    /* Sets the text colour. */
+    color: var(--orange);
+    /* Sets the text size. */
+    font-size: 12px;
+}
+
+/* Styles the elements matching: .nav-toggle */
+.nav-toggle {
+    /* Controls how this element is laid out or shown. */
+    display: none;
+    /* Sets the element border. */
+    border: 0;
+    /* Sets the background colour or image. */
+    background: var(--soft);
+    /* Rounds the element corners. */
+    border-radius: 10px;
+    /* Sets the inside spacing around the element. */
+    padding: 9px 12px;
+    /* Sets the text size. */
+    font-size: 20px;
+}
+
+/* Styles the elements matching: .hero */
+.hero {
+    /* Sets the maximum allowed width. */
+    max-width: 1440px;
+    /* Sets the outside spacing around the element. */
+    margin: auto;
+    /* Sets the inside spacing around the element. */
+    padding: 78px 9% 70px;
+    /* Sets the minimum allowed height. */
+    min-height: 560px;
+    /* Controls how this element is laid out or shown. */
+    display: grid;
+    /* Defines the number and size of grid columns. */
+    grid-template-columns: 1fr 1fr;
+    /* Aligns items along the cross axis. */
+    align-items: center;
+    /* Sets spacing between layout items. */
+    gap: 65px;
+    /* Controls content that extends outside the element. */
+    overflow: hidden;
+}
+
+/* Styles the elements matching: .eyebrow,.small-heading */
+.eyebrow,.small-heading {
+    /* Sets the outside spacing around the element. */
+    margin: 0 0 14px;
+    /* Sets the text colour. */
+    color: var(--orange);
+    /* Sets the text size. */
+    font-size: 10px;
+    /* Sets how bold the text appears. */
+    font-weight: 800;
+    /* Sets the letter spacing property for this rule. */
+    letter-spacing: 2px;
+}
+
+/* Styles the elements matching: .eyebrow-dot */
+.eyebrow-dot {
+    /* Controls how this element is laid out or shown. */
+    display: inline-block;
+    /* Sets the element width. */
+    width: 7px;
+    /* Sets the element height. */
+    height: 7px;
+    /* Rounds the element corners. */
+    border-radius: 50%;
+    /* Sets the background colour or image. */
+    background: var(--orange);
+    /* Sets the margin right property for this rule. */
+    margin-right: 7px;
+    /* Adds a shadow around the element. */
+    box-shadow: 0 0 0 5px #ef704c20;
+}
+
+/* Styles the elements matching: .hero h1 */
+.hero h1 {
+    /* Chooses the typeface. */
+    font-family: Manrope,sans-serif;
+    /* Sets the text size. */
+    font-size: clamp(48px,5.5vw,76px);
+    /* Sets the vertical spacing between lines. */
+    line-height: 1.04;
+    /* Sets the letter spacing property for this rule. */
+    letter-spacing: -4px;
+    /* Sets the outside spacing around the element. */
+    margin: 0 0 22px;
+    /* Sets how bold the text appears. */
+    font-weight: 800;
+}
+
+/* Styles the elements matching: .hero h1 span */
+.hero h1 span {
+    /* Sets the text colour. */
+    color: var(--orange);
+}
+
+/* Styles the elements matching: .hero-description */
+.hero-description {
+    /* Sets the maximum allowed width. */
+    max-width: 470px;
+    /* Sets the text colour. */
+    color: var(--grey);
+    /* Sets the text size. */
+    font-size: 16px;
+    /* Sets the vertical spacing between lines. */
+    line-height: 1.8;
+    /* Sets the outside spacing around the element. */
+    margin: 0 0 28px;
+}
+
+/* Styles the elements matching: .hero-actions */
+.hero-actions {
+    /* Controls how this element is laid out or shown. */
+    display: flex;
+    /* Aligns items along the cross axis. */
+    align-items: center;
+    /* Sets spacing between layout items. */
+    gap: 25px;
+}
+
+/* Styles the elements matching: .orange-button */
+.orange-button {
+    /* Controls how this element is laid out or shown. */
+    display: inline-flex;
+    /* Sets spacing between layout items. */
+    gap: 20px;
+    /* Aligns items along the cross axis. */
+    align-items: center;
+    /* Sets the inside spacing around the element. */
+    padding: 15px 22px;
+}
+
+/* Styles the elements matching: .quiet-link */
+.quiet-link {
+    /* Sets the text decoration property for this rule. */
+    text-decoration: none;
+    /* Sets how bold the text appears. */
+    font-weight: 800;
+    /* Sets the text size. */
+    font-size: 13px;
+}
+
+/* Styles the elements matching: .quiet-link span */
+.quiet-link span {
+    /* Sets the text colour. */
+    color: var(--orange);
+    /* Sets the margin left property for this rule. */
+    margin-left: 8px;
+}
+
+/* Styles the elements matching: .hero-proof */
+.hero-proof {
+    /* Controls how this element is laid out or shown. */
+    display: flex;
+    /* Aligns items along the cross axis. */
+    align-items: center;
+    /* Sets spacing between layout items. */
+    gap: 13px;
+    /* Sets the margin top property for this rule. */
+    margin-top: 38px;
+}
+
+/* Styles the elements matching: .proof-avatars */
+.proof-avatars {
+    /* Controls how this element is laid out or shown. */
+    display: flex;
+}
+
+/* Styles the elements matching: .proof-avatars span */
+.proof-avatars span {
+    /* Controls how this element is laid out or shown. */
+    display: grid;
+    /* Sets the place items property for this rule. */
+    place-items: center;
+    /* Sets the element width. */
+    width: 36px;
+    /* Sets the element height. */
+    height: 36px;
+    /* Rounds the element corners. */
+    border-radius: 50%;
+    /* Sets the background colour or image. */
+    background: #fff;
+    /* Sets the element border. */
+    border: 2px solid var(--cream);
+    /* Sets the margin left property for this rule. */
+    margin-left: -7px;
+    /* Sets the text size. */
+    font-size: 17px;
+}
+
+/* Styles the elements matching: .proof-avatars span:first-child */
+.proof-avatars span:first-child {
+    /* Sets the margin left property for this rule. */
+    margin-left: 0;
+}
+
+/* Styles the elements matching: .hero-proof p */
+.hero-proof p {
+    /* Sets the text size. */
+    font-size: 12px;
+    /* Sets the vertical spacing between lines. */
+    line-height: 1.5;
+    /* Sets the outside spacing around the element. */
+    margin: 0;
+}
+
+/* Styles the elements matching: .hero-proof small */
+.hero-proof small {
+    /* Sets the text colour. */
+    color: var(--grey);
+}
+
+/* Styles the elements matching: .hero-visual */
+.hero-visual {
+    /* Controls the element positioning method. */
+    position: relative;
+    /* Sets the inside spacing around the element. */
+    padding: 10px 15px 25px 0;
+}
+
+/* Styles the elements matching: .hero-image-wrap */
+.hero-image-wrap {
+    /* Sets the element height. */
+    height: 390px;
+    /* Rounds the element corners. */
+    border-radius: 34px 34px 110px 34px;
+    /* Controls content that extends outside the element. */
+    overflow: hidden;
+    /* Adds a shadow around the element. */
+    box-shadow: 0 28px 60px #6d3b2926;
+    /* Moves, rotates or scales the element. */
+    transform: rotate(2deg);
+}
+
+/* Styles the elements matching: .hero-image-wrap img */
+.hero-image-wrap img {
+    /* Sets the element width. */
+    width: 100%;
+    /* Sets the element height. */
+    height: 100%;
+    /* Sets the object fit property for this rule. */
+    object-fit: cover;
+}
+
+/* Styles the elements matching: .floating-note */
+.floating-note {
+    /* Controls the element positioning method. */
+    position: absolute;
+    /* Sets the left property for this rule. */
+    left: -42px;
+    /* Sets the bottom property for this rule. */
+    bottom: 57px;
+    /* Controls how this element is laid out or shown. */
+    display: flex;
+    /* Aligns items along the cross axis. */
+    align-items: center;
+    /* Sets spacing between layout items. */
+    gap: 12px;
+    /* Sets the inside spacing around the element. */
+    padding: 15px 19px;
+    /* Sets the background colour or image. */
+    background: rgba(255,255,255,.88);
+    /* Sets the backdrop filter property for this rule. */
+    backdrop-filter: blur(16px);
+    /* Sets the element border. */
+    border: 1px solid #ffffffb8;
+    /* Rounds the element corners. */
+    border-radius: 17px;
+    /* Adds a shadow around the element. */
+    box-shadow: var(--shadow);
+}
+
+/* Styles the elements matching: .note-icon */
+.note-icon {
+    /* Controls how this element is laid out or shown. */
+    display: grid;
+    /* Sets the place items property for this rule. */
+    place-items: center;
+    /* Sets the element width. */
+    width: 38px;
+    /* Sets the element height. */
+    height: 38px;
+    /* Sets the background colour or image. */
+    background: var(--soft);
+    /* Sets the text colour. */
+    color: var(--orange);
+    /* Rounds the element corners. */
+    border-radius: 12px;
+    /* Sets the text size. */
+    font-size: 21px;
+}
+
+/* Styles the elements matching: .floating-note strong,.floating-note small */
+.floating-note strong,.floating-note small {
+    /* Controls how this element is laid out or shown. */
+    display: block;
+}
+
+/* Styles the elements matching: .floating-note strong */
+.floating-note strong {
+    /* Sets the text size. */
+    font-size: 12px;
+}
+
+/* Styles the elements matching: .floating-note small */
+.floating-note small {
+    /* Sets the text colour. */
+    color: var(--grey);
+    /* Sets the text size. */
+    font-size: 10px;
+}
+
+/* Styles the elements matching: .hero-stamp */
+.hero-stamp {
+    /* Controls the element positioning method. */
+    position: absolute;
+    /* Sets the right property for this rule. */
+    right: -18px;
+    /* Sets the top property for this rule. */
+    top: 30px;
+    /* Controls how this element is laid out or shown. */
+    display: grid;
+    /* Sets the place content property for this rule. */
+    place-content: center;
+    /* Sets the element width. */
+    width: 94px;
+    /* Sets the element height. */
+    height: 94px;
+    /* Rounds the element corners. */
+    border-radius: 50%;
+    /* Sets the background colour or image. */
+    background: var(--orange);
+    /* Sets the text colour. */
+    color: #fff;
+    /* Sets horizontal text alignment. */
+    text-align: center;
+    /* Sets the text size. */
+    font-size: 14px;
+    /* Sets how bold the text appears. */
+    font-weight: 800;
+    /* Sets the vertical spacing between lines. */
+    line-height: 1.1;
+    /* Sets the letter spacing property for this rule. */
+    letter-spacing: 1px;
+    /* Moves, rotates or scales the element. */
+    transform: rotate(12deg);
+    /* Adds a shadow around the element. */
+    box-shadow: 0 12px 30px #ef704c55;
+}
+
+/* Styles the elements matching: .hero-stamp span */
+.hero-stamp span {
+    /* Sets the text colour. */
+    color: #ffe1d5;
+}
+
+/* Styles the elements matching: .quick-strip */
+.quick-strip {
+    /* Controls how this element is laid out or shown. */
+    display: flex;
+    /* Distributes items along the main axis. */
+    justify-content: center;
+    /* Sets spacing between layout items. */
+    gap: clamp(25px,7vw,100px);
+    /* Sets the inside spacing around the element. */
+    padding: 21px 7%;
+    /* Sets the background colour or image. */
+    background: #292725;
+    /* Sets the text colour. */
+    color: #fff;
+}
+
+/* Styles the elements matching: .quick-strip div */
+.quick-strip div {
+    /* Controls how this element is laid out or shown. */
+    display: flex;
+    /* Aligns items along the cross axis. */
+    align-items: center;
+    /* Sets spacing between layout items. */
+    gap: 12px;
+    /* Sets the text size. */
+    font-size: 12px;
+}
+
+/* Styles the elements matching: .quick-strip span */
+.quick-strip span {
+    /* Sets the text colour. */
+    color: var(--orange);
+    /* Sets the text size. */
+    font-size: 10px;
+    /* Sets how bold the text appears. */
+    font-weight: 800;
+    /* Sets the letter spacing property for this rule. */
+    letter-spacing: 1px;
+}
+
+/* Styles the elements matching: .catalog-section */
+.catalog-section {
+    /* Sets the inside spacing around the element. */
+    padding: 88px 9% 95px;
+    /* Sets the background colour or image. */
+    background: #fff;
+}
+
+/* Styles the elements matching: .section-heading,.partners-heading */
+.section-heading,.partners-heading {
+    /* Controls how this element is laid out or shown. */
+    display: flex;
+    /* Distributes items along the main axis. */
+    justify-content: space-between;
+    /* Aligns items along the cross axis. */
+    align-items: end;
+    /* Sets spacing between layout items. */
+    gap: 30px;
+}
+
+/* Styles the elements matching: .section-heading h2,.partners-heading h2,.how-section h2 */
+.section-heading h2,.partners-heading h2,.how-section h2 {
+    /* Chooses the typeface. */
+    font-family: Manrope,sans-serif;
+    /* Sets the text size. */
+    font-size: clamp(30px,3vw,42px);
+    /* Sets the letter spacing property for this rule. */
+    letter-spacing: -1.8px;
+    /* Sets the vertical spacing between lines. */
+    line-height: 1.15;
+    /* Sets the outside spacing around the element. */
+    margin: 0 0 9px;
+}
+
+/* Styles the elements matching: .section-description */
+.section-description {
+    /* Sets the text colour. */
+    color: var(--grey);
+    /* Sets the text size. */
+    font-size: 14px;
+    /* Sets the outside spacing around the element. */
+    margin: 0;
+}
+
+/* Styles the elements matching: .search-wrap */
+.search-wrap {
+    /* Sets the element width. */
+    width: min(350px,100%);
+    /* Sets the element height. */
+    height: 52px;
+    /* Controls how this element is laid out or shown. */
+    display: flex;
+    /* Aligns items along the cross axis. */
+    align-items: center;
+    /* Sets spacing between layout items. */
+    gap: 10px;
+    /* Sets the inside spacing around the element. */
+    padding: 0 17px;
+    /* Sets the element border. */
+    border: 1px solid var(--line);
+    /* Rounds the element corners. */
+    border-radius: 15px;
+    /* Sets the background colour or image. */
+    background: #fff;
+    /* Adds a shadow around the element. */
+    box-shadow: 0 7px 25px #29272508;
+}
+
+/* Styles the elements matching: .search-wrap span */
+.search-wrap span {
+    /* Sets the text size. */
+    font-size: 27px;
+    /* Sets the text colour. */
+    color: var(--orange);
+}
+
+/* Styles the elements matching: .search-wrap input */
+.search-wrap input {
+    /* Sets the element width. */
+    width: 100%;
+    /* Sets the element border. */
+    border: 0;
+    /* Sets the outline property for this rule. */
+    outline: 0;
+    /* Sets the background colour or image. */
+    background: transparent;
+    /* Sets the text size. */
+    font-size: 13px;
+}
+
+/* Styles the elements matching: .category-list */
+.category-list {
+    /* Controls how this element is laid out or shown. */
+    display: flex;
+    /* Sets spacing between layout items. */
+    gap: 9px;
+    /* Sets the flex wrap property for this rule. */
+    flex-wrap: wrap;
+    /* Sets the outside spacing around the element. */
+    margin: 32px 0;
+}
+
+/* Styles the elements matching: .category */
+.category {
+    /* Sets the element border. */
+    border: 1px solid var(--line);
+    /* Rounds the element corners. */
+    border-radius: 30px;
+    /* Sets the inside spacing around the element. */
+    padding: 10px 16px;
+    /* Sets the background colour or image. */
+    background: #fff;
+    /* Sets the text colour. */
+    color: #655e58;
+    /* Sets the text size. */
+    font-size: 12px;
+    /* Sets how bold the text appears. */
+    font-weight: 700;
+    /* Defines how a visual change animates. */
+    transition: .2s;
+}
+
+/* Styles the elements matching: .category:hover,.category.active */
+.category:hover,.category.active {
+    /* Sets the background colour or image. */
+    background: var(--orange);
+    /* Sets the border color property for this rule. */
+    border-color: var(--orange);
+    /* Sets the text colour. */
+    color: #fff;
+    /* Adds a shadow around the element. */
+    box-shadow: 0 7px 17px #ef704c30;
+}
+
+/* Styles the elements matching: .restaurant-grid */
+.restaurant-grid {
+    /* Controls how this element is laid out or shown. */
+    display: grid;
+    /* Defines the number and size of grid columns. */
+    grid-template-columns: repeat(3,minmax(0,1fr));
+    /* Sets spacing between layout items. */
+    gap: 23px;
+}
+
+/* Styles the elements matching: .restaurant-card,.food-card,.partner-card */
+.restaurant-card,.food-card,.partner-card {
+    /* Controls content that extends outside the element. */
+    overflow: hidden;
+    /* Sets the element border. */
+    border: 1px solid #f0e8e2;
+    /* Rounds the element corners. */
+    border-radius: 20px;
+    /* Sets the background colour or image. */
+    background: #fff;
+    /* Adds a shadow around the element. */
+    box-shadow: 0 7px 24px #29272508;
+    /* Defines how a visual change animates. */
+    transition: transform .25s,box-shadow .25s;
+}
+
+/* Styles the elements matching: .restaurant-card:hover,.food-card:hover,.partner-card:hover */
+.restaurant-card:hover,.food-card:hover,.partner-card:hover {
+    /* Moves, rotates or scales the element. */
+    transform: translateY(-7px);
+    /* Adds a shadow around the element. */
+    box-shadow: var(--shadow);
+}
+
+/* Styles the elements matching: .restaurant-card img,.food-card img */
+.restaurant-card img,.food-card img {
+    /* Controls how this element is laid out or shown. */
+    display: block;
+    /* Sets the element width. */
+    width: 100%;
+    /* Sets the element height. */
+    height: 190px;
+    /* Sets the object fit property for this rule. */
+    object-fit: cover;
+}
+
+/* Styles the elements matching: .restaurant-info,.food-info */
+.restaurant-info,.food-info {
+    /* Sets the inside spacing around the element. */
+    padding: 19px;
+}
+
+/* Styles the elements matching: .restaurant-info h3,.food-info h3,.partner-card h3 */
+.restaurant-info h3,.food-info h3,.partner-card h3 {
+    /* Chooses the typeface. */
+    font-family: Manrope,sans-serif;
+    /* Sets the text size. */
+    font-size: 18px;
+    /* Sets the letter spacing property for this rule. */
+    letter-spacing: -.4px;
+    /* Sets the outside spacing around the element. */
+    margin: 0 0 5px;
+}
+
+/* Styles the elements matching: .restaurant-info p,.food-info p */
+.restaurant-info p,.food-info p {
+    /* Sets the text colour. */
+    color: var(--grey);
+    /* Sets the text size. */
+    font-size: 12px;
+    /* Sets the outside spacing around the element. */
+    margin: 7px 0;
+    /* Sets the vertical spacing between lines. */
+    line-height: 1.6;
+}
+
+/* Styles the elements matching: .restaurant-meta */
+.restaurant-meta {
+    /* Controls how this element is laid out or shown. */
+    display: flex;
+    /* Distributes items along the main axis. */
+    justify-content: space-between;
+    /* Sets the outside spacing around the element. */
+    margin: 15px 0;
+    /* Sets the text colour. */
+    color: var(--grey);
+    /* Sets the text size. */
+    font-size: 11px;
+}
+
+/* Styles the elements matching: .rating,.partner-rating */
+.rating,.partner-rating {
+    /* Sets the text colour. */
+    color: #27804a;
+    /* Sets how bold the text appears. */
+    font-weight: 800;
+}
+
+/* Styles the elements matching: .view-menu-button */
+.view-menu-button {
+    /* Sets the element width. */
+    width: 100%;
+    /* Sets the inside spacing around the element. */
+    padding: 12px;
+    /* Sets the element border. */
+    border: 0;
+    /* Rounds the element corners. */
+    border-radius: 11px;
+    /* Sets the background colour or image. */
+    background: var(--dark);
+    /* Sets the text colour. */
+    color: #fff;
+    /* Sets how bold the text appears. */
+    font-weight: 700;
+    /* Sets the text size. */
+    font-size: 12px;
+    /* Defines how a visual change animates. */
+    transition: .2s;
+}
+
+/* Styles the elements matching: .view-menu-button:hover */
+.view-menu-button:hover {
+    /* Sets the background colour or image. */
+    background: var(--orange);
+}
+
+/* Styles the elements matching: .food-bottom */
+.food-bottom {
+    /* Controls how this element is laid out or shown. */
+    display: flex;
+    /* Distributes items along the main axis. */
+    justify-content: space-between;
+    /* Aligns items along the cross axis. */
+    align-items: center;
+    /* Sets the margin top property for this rule. */
+    margin-top: 15px;
+}
+
+/* Styles the elements matching: .food-bottom strong */
+.food-bottom strong {
+    /* Sets the text size. */
+    font-size: 17px;
+}
+
+/* Styles the elements matching: .add-button */
+.add-button {
+    /* Sets the inside spacing around the element. */
+    padding: 9px 15px;
+    /* Sets the element border. */
+    border: 1px solid var(--orange);
+    /* Rounds the element corners. */
+    border-radius: 10px;
+    /* Sets the background colour or image. */
+    background: #fff5f0;
+    /* Sets the text colour. */
+    color: var(--orange);
+    /* Sets how bold the text appears. */
+    font-weight: 800;
+    /* Sets the text size. */
+    font-size: 12px;
+}
+
+/* Styles the elements matching: .add-button:hover */
+.add-button:hover {
+    /* Sets the background colour or image. */
+    background: var(--orange);
+    /* Sets the text colour. */
+    color: #fff;
+}
+
+/* Styles the elements matching: .back-button */
+.back-button {
+    /* Sets the element border. */
+    border: 0;
+    /* Sets the background colour or image. */
+    background: transparent;
+    /* Sets the text colour. */
+    color: var(--orange);
+    /* Sets how bold the text appears. */
+    font-weight: 800;
+    /* Sets the outside spacing around the element. */
+    margin: 0 0 20px;
+    /* Sets the inside spacing around the element. */
+    padding: 8px 0;
+}
+
+/* Styles the elements matching: #no-results */
+#no-results {
+    /* Controls how this element is laid out or shown. */
+    display: none;
+    /* Sets horizontal text alignment. */
+    text-align: center;
+    /* Sets the text colour. */
+    color: var(--grey);
+    /* Sets the inside spacing around the element. */
+    padding: 35px;
+}
+
+/* Styles the elements matching: .partners-section */
+.partners-section {
+    /* Sets the inside spacing around the element. */
+    padding: 88px 9%;
+    /* Sets the background colour or image. */
+    background: #fff4ec;
+}
+
+/* Styles the elements matching: .partners-heading */
+.partners-heading {
+    /* Sets the margin bottom property for this rule. */
+    margin-bottom: 32px;
+}
+
+/* Styles the elements matching: .partner-tag */
+.partner-tag {
+    /* Sets the inside spacing around the element. */
+    padding: 10px 15px;
+    /* Sets the element border. */
+    border: 1px solid #f3d5c8;
+    /* Rounds the element corners. */
+    border-radius: 30px;
+    /* Sets the text colour. */
+    color: var(--orange);
+    /* Sets the background colour or image. */
+    background: #fff;
+    /* Sets the text size. */
+    font-size: 10px;
+    /* Sets how bold the text appears. */
+    font-weight: 800;
+    /* Sets the letter spacing property for this rule. */
+    letter-spacing: 1px;
+}
+
+/* Styles the elements matching: .partner-grid */
+.partner-grid {
+    /* Controls how this element is laid out or shown. */
+    display: grid;
+    /* Defines the number and size of grid columns. */
+    grid-template-columns: repeat(4,minmax(0,1fr));
+    /* Sets spacing between layout items. */
+    gap: 18px;
+}
+
+/* Styles the elements matching: .partner-card img */
+.partner-card img {
+    /* Controls how this element is laid out or shown. */
+    display: block;
+    /* Sets the element width. */
+    width: 100%;
+    /* Sets the element height. */
+    height: 155px;
+    /* Sets the object fit property for this rule. */
+    object-fit: cover;
+}
+
+/* Styles the elements matching: .partner-card-info */
+.partner-card-info {
+    /* Sets the inside spacing around the element. */
+    padding: 17px;
+}
+
+/* Styles the elements matching: .partner-card-top */
+.partner-card-top {
+    /* Controls how this element is laid out or shown. */
+    display: flex;
+    /* Distributes items along the main axis. */
+    justify-content: space-between;
+    /* Aligns items along the cross axis. */
+    align-items: center;
+}
+
+/* Styles the elements matching: .partner-type */
+.partner-type {
+    /* Sets the text colour. */
+    color: var(--orange);
+    /* Sets the text size. */
+    font-size: 9px;
+    /* Sets how bold the text appears. */
+    font-weight: 800;
+    /* Sets the letter spacing property for this rule. */
+    letter-spacing: 1px;
+}
+
+/* Styles the elements matching: .partner-rating */
+.partner-rating {
+    /* Sets the text size. */
+    font-size: 11px;
+}
+
+/* Styles the elements matching: .partner-card h3 */
+.partner-card h3 {
+    /* Sets the outside spacing around the element. */
+    margin: 12px 0 6px;
+}
+
+/* Styles the elements matching: .partner-card p */
+.partner-card p {
+    /* Sets the minimum allowed height. */
+    min-height: 40px;
+    /* Sets the text colour. */
+    color: var(--grey);
+    /* Sets the text size. */
+    font-size: 12px;
+    /* Sets the vertical spacing between lines. */
+    line-height: 1.55;
+    /* Sets the outside spacing around the element. */
+    margin: 0 0 14px;
+}
+
+/* Styles the elements matching: .partner-action */
+.partner-action {
+    /* Controls how this element is laid out or shown. */
+    display: flex;
+    /* Distributes items along the main axis. */
+    justify-content: space-between;
+    /* Aligns items along the cross axis. */
+    align-items: center;
+    /* Sets the inside spacing around the element. */
+    padding: 11px 12px;
+    /* Rounds the element corners. */
+    border-radius: 10px;
+    /* Sets the background colour or image. */
+    background: var(--dark);
+    /* Sets the text colour. */
+    color: #fff;
+    /* Sets the text decoration property for this rule. */
+    text-decoration: none;
+    /* Sets the text size. */
+    font-size: 11px;
+    /* Sets how bold the text appears. */
+    font-weight: 800;
+}
+
+/* Styles the elements matching: .partner-action:hover */
+.partner-action:hover {
+    /* Sets the background colour or image. */
+    background: var(--orange);
+}
+
+/* Styles the elements matching: .partner-disclaimer */
+.partner-disclaimer {
+    /* Sets the outside spacing around the element. */
+    margin: 20px 0 0;
+    /* Sets the text colour. */
+    color: var(--grey);
+    /* Sets the text size. */
+    font-size: 10px;
+}
+
+/* Styles the elements matching: .how-section */
+.how-section {
+    /* Sets the inside spacing around the element. */
+    padding: 88px 9%;
+    /* Sets horizontal text alignment. */
+    text-align: center;
+}
+
+/* Styles the elements matching: .how-section>.section-description */
+.how-section>.section-description {
+    /* Sets the margin top property for this rule. */
+    margin-top: 10px;
+}
+
+/* Styles the elements matching: .steps */
+.steps {
+    /* Controls how this element is laid out or shown. */
+    display: grid;
+    /* Defines the number and size of grid columns. */
+    grid-template-columns: repeat(3,1fr);
+    /* Sets spacing between layout items. */
+    gap: 20px;
+    /* Sets the margin top property for this rule. */
+    margin-top: 38px;
+    /* Sets horizontal text alignment. */
+    text-align: left;
+}
+
+/* Styles the elements matching: .steps article */
+.steps article {
+    /* Sets the inside spacing around the element. */
+    padding: 28px;
+    /* Sets the element border. */
+    border: 1px solid var(--line);
+    /* Rounds the element corners. */
+    border-radius: 20px;
+    /* Sets the background colour or image. */
+    background: #fff;
+    /* Adds a shadow around the element. */
+    box-shadow: 0 8px 25px #29272506;
+}
+
+/* Styles the elements matching: .steps article span */
+.steps article span {
+    /* Controls how this element is laid out or shown. */
+    display: grid;
+    /* Sets the place items property for this rule. */
+    place-items: center;
+    /* Sets the element width. */
+    width: 47px;
+    /* Sets the element height. */
+    height: 47px;
+    /* Rounds the element corners. */
+    border-radius: 15px;
+    /* Sets the background colour or image. */
+    background: var(--soft);
+    /* Sets the text colour. */
+    color: var(--orange);
+    /* Sets the text size. */
+    font-size: 24px;
+}
+
+/* Styles the elements matching: .steps h3 */
+.steps h3 {
+    /* Chooses the typeface. */
+    font-family: Manrope,sans-serif;
+    /* Sets the outside spacing around the element. */
+    margin: 19px 0 7px;
+}
+
+/* Styles the elements matching: .steps p */
+.steps p {
+    /* Sets the text colour. */
+    color: var(--grey);
+    /* Sets the text size. */
+    font-size: 13px;
+    /* Sets the vertical spacing between lines. */
+    line-height: 1.7;
+    /* Sets the outside spacing around the element. */
+    margin: 0;
+}
+
+/* Styles the elements matching: .site-footer */
+.site-footer {
+    /* Sets the inside spacing around the element. */
+    padding: 45px 9% 20px;
+    /* Sets the background colour or image. */
+    background: var(--dark);
+    /* Sets the text colour. */
+    color: #fff;
+}
+
+/* Styles the elements matching: .footer-main */
+.footer-main {
+    /* Controls how this element is laid out or shown. */
+    display: grid;
+    /* Defines the number and size of grid columns. */
+    grid-template-columns: 1fr 1fr;
+    /* Sets spacing between layout items. */
+    gap: 10px;
+    /* Aligns items along the cross axis. */
+    align-items: center;
+}
+
+/* Styles the elements matching: .footer-main .logo */
+.footer-main .logo {
+    /* Sets the text colour. */
+    color: #fff;
+}
+
+/* Styles the elements matching: .footer-main p */
+.footer-main p {
+    /* Sets the text colour. */
+    color: #c2bbb5;
+    /* Sets the text size. */
+    font-size: 12px;
+}
+
+/* Styles the elements matching: .footer-links */
+.footer-links {
+    /* Sets the grid column property for this rule. */
+    grid-column: 1/-1;
+    /* Controls how this element is laid out or shown. */
+    display: flex;
+    /* Sets the flex wrap property for this rule. */
+    flex-wrap: wrap;
+    /* Sets spacing between layout items. */
+    gap: 24px;
+    /* Sets the inside spacing around the element. */
+    padding: 22px 0 30px;
+}
+
+/* Styles the elements matching: .footer-links a */
+.footer-links a {
+    /* Sets the text colour. */
+    color: #e3dcd6;
+    /* Sets the text decoration property for this rule. */
+    text-decoration: none;
+    /* Sets the text size. */
+    font-size: 12px;
+}
+
+/* Styles the elements matching: .footer-links a:hover */
+.footer-links a:hover {
+    /* Sets the text colour. */
+    color: var(--orange);
+}
+
+/* Styles the elements matching: .footer-bottom */
+.footer-bottom {
+    /* Controls how this element is laid out or shown. */
+    display: flex;
+    /* Distributes items along the main axis. */
+    justify-content: space-between;
+    /* Sets the border top property for this rule. */
+    border-top: 1px solid #ffffff22;
+    /* Sets the padding top property for this rule. */
+    padding-top: 17px;
+    /* Sets the text colour. */
+    color: #b7aea8;
+    /* Sets the text size. */
+    font-size: 10px;
+}
+
+/* Styles the elements matching: .modal-background */
+.modal-background {
+    /* Controls how this element is laid out or shown. */
+    display: none;
+    /* Controls the element positioning method. */
+    position: fixed;
+    /* Sets the inset property for this rule. */
+    inset: 0;
+    /* Controls stacking order. */
+    z-index: 50;
+    /* Distributes items along the main axis. */
+    justify-content: center;
+    /* Aligns items along the cross axis. */
+    align-items: center;
+    /* Sets the inside spacing around the element. */
+    padding: 16px;
+    /* Sets the background colour or image. */
+    background: #171311a8;
+    /* Sets the backdrop filter property for this rule. */
+    backdrop-filter: blur(5px);
+}
+
+/* Styles the elements matching: .modal-background.show */
+.modal-background.show {
+    /* Controls how this element is laid out or shown. */
+    display: flex;
+}
+
+/* Styles the elements matching: .cart-box */
+.cart-box {
+    /* Sets the element width. */
+    width: 470px;
+    /* Sets the maximum allowed width. */
+    max-width: 100%;
+    /* Sets the max height property for this rule. */
+    max-height: 90vh;
+    /* Controls content that extends outside the element. */
+    overflow: auto;
+    /* Sets the inside spacing around the element. */
+    padding: 25px;
+    /* Rounds the element corners. */
+    border-radius: 24px;
+    /* Sets the background colour or image. */
+    background: #fff;
+    /* Adds a shadow around the element. */
+    box-shadow: 0 25px 90px #0004;
+}
+
+/* Styles the elements matching: .cart-header */
+.cart-header {
+    /* Controls how this element is laid out or shown. */
+    display: flex;
+    /* Aligns items along the cross axis. */
+    align-items: center;
+    /* Distributes items along the main axis. */
+    justify-content: space-between;
+}
+
+/* Styles the elements matching: .cart-header .eyebrow */
+.cart-header .eyebrow {
+    /* Sets the margin bottom property for this rule. */
+    margin-bottom: 4px;
+}
+
+/* Styles the elements matching: .cart-header h2 */
+.cart-header h2 {
+    /* Sets the outside spacing around the element. */
+    margin: 0;
+    /* Chooses the typeface. */
+    font-family: Manrope,sans-serif;
+}
+
+/* Styles the elements matching: .close-button */
+.close-button {
+    /* Sets the element width. */
+    width: 36px;
+    /* Sets the element height. */
+    height: 36px;
+    /* Sets the element border. */
+    border: 0;
+    /* Rounds the element corners. */
+    border-radius: 50%;
+    /* Sets the background colour or image. */
+    background: var(--soft);
+    /* Sets the text colour. */
+    color: var(--dark);
+    /* Sets the text size. */
+    font-size: 24px;
+}
+
+/* Styles the elements matching: .cart-restaurant */
+.cart-restaurant {
+    /* Sets the text colour. */
+    color: var(--orange);
+    /* Sets the text size. */
+    font-size: 12px;
+    /* Sets how bold the text appears. */
+    font-weight: 800;
+}
+
+/* Styles the elements matching: .cart-row */
+.cart-row {
+    /* Controls how this element is laid out or shown. */
+    display: flex;
+    /* Distributes items along the main axis. */
+    justify-content: space-between;
+    /* Aligns items along the cross axis. */
+    align-items: center;
+    /* Sets spacing between layout items. */
+    gap: 10px;
+    /* Sets the inside spacing around the element. */
+    padding: 13px 0;
+    /* Sets the border bottom property for this rule. */
+    border-bottom: 1px solid var(--line);
+}
+
+/* Styles the elements matching: .cart-row p */
+.cart-row p {
+    /* Sets the text colour. */
+    color: var(--grey);
+    /* Sets the text size. */
+    font-size: 11px;
+    /* Sets the outside spacing around the element. */
+    margin: 4px 0 0;
+}
+
+/* Styles the elements matching: .quantity-button */
+.quantity-button {
+    /* Sets the inside spacing around the element. */
+    padding: 5px 10px;
+    /* Sets the element border. */
+    border: 1px solid var(--line);
+    /* Rounds the element corners. */
+    border-radius: 7px;
+    /* Sets the background colour or image. */
+    background: #fff;
+}
+
+/* Styles the elements matching: .cart-total */
+.cart-total {
+    /* Sets the border top property for this rule. */
+    border-top: 1px solid var(--line);
+    /* Sets the margin top property for this rule. */
+    margin-top: 16px;
+    /* Sets the padding top property for this rule. */
+    padding-top: 10px;
+}
+
+/* Styles the elements matching: .cart-total h3 */
+.cart-total h3 {
+    /* Controls how this element is laid out or shown. */
+    display: flex;
+    /* Distributes items along the main axis. */
+    justify-content: space-between;
+}
+
+/* Styles the elements matching: .delivery-details */
+.delivery-details {
+    /* Sets the margin top property for this rule. */
+    margin-top: 18px;
+    /* Sets the inside spacing around the element. */
+    padding: 17px;
+    /* Sets the element border. */
+    border: 1px solid var(--line);
+    /* Rounds the element corners. */
+    border-radius: 15px;
+    /* Sets the background colour or image. */
+    background: #fffaf6;
+}
+
+/* Styles the elements matching: .delivery-details h3 */
+.delivery-details h3 {
+    /* Sets the outside spacing around the element. */
+    margin: 0 0 5px;
+}
+
+/* Styles the elements matching: .delivery-hint */
+.delivery-hint {
+    /* Sets the text colour. */
+    color: var(--grey);
+    /* Sets the text size. */
+    font-size: 11px;
+}
+
+/* Styles the elements matching: .delivery-details label */
+.delivery-details label {
+    /* Controls how this element is laid out or shown. */
+    display: block;
+    /* Sets the outside spacing around the element. */
+    margin: 11px 0 5px;
+    /* Sets the text size. */
+    font-size: 11px;
+    /* Sets how bold the text appears. */
+    font-weight: 800;
+}
+
+/* Styles the elements matching: .delivery-details input */
+.delivery-details input {
+    /* Sets the element width. */
+    width: 100%;
+    /* Sets the inside spacing around the element. */
+    padding: 11px;
+    /* Sets the element border. */
+    border: 1px solid #e8ded6;
+    /* Rounds the element corners. */
+    border-radius: 10px;
+    /* Sets the outline color property for this rule. */
+    outline-color: var(--orange);
+    /* Sets the text size. */
+    font-size: 12px;
+}
+
+/* Styles the elements matching: #place-order */
+#place-order {
+    /* Sets the element width. */
+    width: 100%;
+    /* Sets the inside spacing around the element. */
+    padding: 14px;
+    /* Sets the element border. */
+    border: 0;
+    /* Rounds the element corners. */
+    border-radius: 11px;
+    /* Sets the background colour or image. */
+    background: var(--orange);
+    /* Sets the text colour. */
+    color: #fff;
+    /* Sets how bold the text appears. */
+    font-weight: 800;
+}
+
+/* Styles the elements matching: #place-order:disabled */
+#place-order:disabled {
+    /* Sets the background colour or image. */
+    background: #bbb;
+    /* Sets the mouse pointer appearance. */
+    cursor: not-allowed;
+}
+
+/* Styles the elements matching: .demo-note,.empty-cart */
+.demo-note,.empty-cart {
+    /* Sets horizontal text alignment. */
+    text-align: center;
+    /* Sets the text colour. */
+    color: var(--grey);
+    /* Sets the text size. */
+    font-size: 11px;
+}
+
+/* Styles the elements matching: :focus-visible */
+:focus-visible {
+    /* Sets the outline property for this rule. */
+    outline: 3px solid #ef704c66;
+    /* Sets the outline offset property for this rule. */
+    outline-offset: 3px;
+}
+
+@media (max-width:1050px) {
+    /* Styles the elements matching: .topbar */
+    .topbar {
+        /* Sets the inside spacing around the element. */
+        padding: 0 4%;
+    }
+
+    /* Styles the elements matching: .main-nav */
+    .main-nav {
+        /* Sets spacing between layout items. */
+        gap: 15px;
+    }
+
+    /* Styles the elements matching: .hero */
+    .hero {
+        /* Sets the padding left property for this rule. */
+        padding-left: 7%;
+        /* Sets the padding right property for this rule. */
+        padding-right: 7%;
+        /* Sets spacing between layout items. */
+        gap: 35px;
+    }
+
+    /* Styles the elements matching: .catalog-section,.partners-section,.how-section */
+    .catalog-section,.partners-section,.how-section {
+        /* Sets the padding left property for this rule. */
+        padding-left: 7%;
+        /* Sets the padding right property for this rule. */
+        padding-right: 7%;
+    }
+
+    /* Styles the elements matching: .partner-grid */
+    .partner-grid {
+        /* Defines the number and size of grid columns. */
+        grid-template-columns: repeat(2,minmax(0,1fr));
+    }
+
+}
+
+@media (max-width:760px) {
+    /* Styles the elements matching: .topbar */
+    .topbar {
+        /* Sets the element height. */
+        height: 72px;
+        /* Sets the inside spacing around the element. */
+        padding: 0 5%;
+        /* Sets spacing between layout items. */
+        gap: 12px;
+    }
+
+    /* Styles the elements matching: .nav-toggle */
+    .nav-toggle {
+        /* Controls how this element is laid out or shown. */
+        display: block;
+        /* Sets the margin left property for this rule. */
+        margin-left: auto;
+    }
+
+    /* Styles the elements matching: .main-nav */
+    .main-nav {
+        /* Controls how this element is laid out or shown. */
+        display: none;
+        /* Controls the element positioning method. */
+        position: absolute;
+        /* Sets the left property for this rule. */
+        left: 0;
+        /* Sets the right property for this rule. */
+        right: 0;
+        /* Sets the top property for this rule. */
+        top: 72px;
+        /* Sets the inside spacing around the element. */
+        padding: 18px 6%;
+        /* Sets the background colour or image. */
+        background: #fff;
+        /* Adds a shadow around the element. */
+        box-shadow: 0 15px 20px #29272512;
+        /* Aligns items along the cross axis. */
+        align-items: flex-start;
+        /* Sets the direction of flex items. */
+        flex-direction: column;
+        /* Sets spacing between layout items. */
+        gap: 17px;
+    }
+
+    /* Styles the elements matching: .main-nav.is-open */
+    .main-nav.is-open {
+        /* Controls how this element is laid out or shown. */
+        display: flex;
+    }
+
+    /* Styles the elements matching: .nav-actions */
+    .nav-actions {
+        /* Sets spacing between layout items. */
+        gap: 10px;
+    }
+
+    /* Styles the elements matching: .nav-actions .text-link,.nav-register */
+    .nav-actions .text-link,.nav-register {
+        /* Controls how this element is laid out or shown. */
+        display: none;
+    }
+
+    /* Styles the elements matching: .cart-button */
+    .cart-button {
+        /* Sets the inside spacing around the element. */
+        padding: 10px 12px;
+        /* Sets the text size. */
+        font-size: 12px;
+    }
+
+    /* Styles the elements matching: .hero */
+    .hero {
+        /* Defines the number and size of grid columns. */
+        grid-template-columns: 1fr;
+        /* Sets the inside spacing around the element. */
+        padding: 60px 7% 55px;
+        /* Sets horizontal text alignment. */
+        text-align: center;
+        /* Sets spacing between layout items. */
+        gap: 38px;
+    }
+
+    /* Styles the elements matching: .hero-description */
+    .hero-description {
+        /* Sets the margin left property for this rule. */
+        margin-left: auto;
+        /* Sets the margin right property for this rule. */
+        margin-right: auto;
+    }
+
+    /* Styles the elements matching: .hero-actions,.hero-proof */
+    .hero-actions,.hero-proof {
+        /* Distributes items along the main axis. */
+        justify-content: center;
+    }
+
+    /* Styles the elements matching: .hero-visual */
+    .hero-visual {
+        /* Sets the element width. */
+        width: min(100%,510px);
+        /* Sets the outside spacing around the element. */
+        margin: auto;
+    }
+
+    /* Styles the elements matching: .hero-image-wrap */
+    .hero-image-wrap {
+        /* Sets the element height. */
+        height: 310px;
+    }
+
+    /* Styles the elements matching: .floating-note */
+    .floating-note {
+        /* Sets the left property for this rule. */
+        left: -5px;
+        /* Sets the bottom property for this rule. */
+        bottom: 42px;
+    }
+
+    /* Styles the elements matching: .hero-stamp */
+    .hero-stamp {
+        /* Sets the right property for this rule. */
+        right: 0;
+    }
+
+    /* Styles the elements matching: .quick-strip */
+    .quick-strip {
+        /* Sets spacing between layout items. */
+        gap: 12px;
+        /* Distributes items along the main axis. */
+        justify-content: space-around;
+        /* Sets the inside spacing around the element. */
+        padding: 17px 5%;
+    }
+
+    /* Styles the elements matching: .quick-strip div */
+    .quick-strip div {
+        /* Sets the text size. */
+        font-size: 10px;
+        /* Sets spacing between layout items. */
+        gap: 6px;
+    }
+
+    /* Styles the elements matching: .section-heading,.partners-heading */
+    .section-heading,.partners-heading {
+        /* Aligns items along the cross axis. */
+        align-items: stretch;
+        /* Sets the direction of flex items. */
+        flex-direction: column;
+    }
+
+    /* Styles the elements matching: .search-wrap */
+    .search-wrap {
+        /* Sets the element width. */
+        width: 100%;
+    }
+
+    /* Styles the elements matching: .restaurant-grid */
+    .restaurant-grid {
+        /* Defines the number and size of grid columns. */
+        grid-template-columns: repeat(2,minmax(0,1fr));
+    }
+
+    /* Styles the elements matching: .steps */
+    .steps {
+        /* Defines the number and size of grid columns. */
+        grid-template-columns: 1fr;
+    }
+
+    /* Styles the elements matching: .footer-main */
+    .footer-main {
+        /* Defines the number and size of grid columns. */
+        grid-template-columns: 1fr;
+    }
+
+    /* Styles the elements matching: .footer-links */
+    .footer-links {
+        /* Sets the grid column property for this rule. */
+        grid-column: auto;
+    }
+
+    /* Styles the elements matching: .catalog-section,.partners-section,.how-section */
+    .catalog-section,.partners-section,.how-section {
+        /* Sets the padding top property for this rule. */
+        padding-top: 62px;
+        /* Sets the padding bottom property for this rule. */
+        padding-bottom: 65px;
+    }
+
+}
+
+@media (max-width:520px) {
+    /* Styles the elements matching: .logo */
+    .logo {
+        /* Sets the text size. */
+        font-size: 27px;
+    }
+
+    /* Styles the elements matching: .hero h1 */
+    .hero h1 {
+        /* Sets the text size. */
+        font-size: 48px;
+        /* Sets the letter spacing property for this rule. */
+        letter-spacing: -2.7px;
+    }
+
+    /* Styles the elements matching: .hero */
+    .hero {
+        /* Sets the padding top property for this rule. */
+        padding-top: 48px;
+    }
+
+    /* Styles the elements matching: .hero-image-wrap */
+    .hero-image-wrap {
+        /* Sets the element height. */
+        height: 245px;
+        /* Rounds the element corners. */
+        border-radius: 25px 25px 75px 25px;
+    }
+
+    /* Styles the elements matching: .floating-note */
+    .floating-note {
+        /* Sets the inside spacing around the element. */
+        padding: 10px 12px;
+        /* Sets the left property for this rule. */
+        left: -8px;
+    }
+
+    /* Styles the elements matching: .hero-stamp */
+    .hero-stamp {
+        /* Sets the element width. */
+        width: 75px;
+        /* Sets the element height. */
+        height: 75px;
+        /* Sets the text size. */
+        font-size: 11px;
+    }
+
+    /* Styles the elements matching: .quick-strip */
+    .quick-strip {
+        /* Sets the direction of flex items. */
+        flex-direction: column;
+        /* Aligns items along the cross axis. */
+        align-items: flex-start;
+        /* Sets the inside spacing around the element. */
+        padding: 18px 10%;
+    }
+
+    /* Styles the elements matching: .catalog-section,.partners-section,.how-section */
+    .catalog-section,.partners-section,.how-section {
+        /* Sets the padding left property for this rule. */
+        padding-left: 6%;
+        /* Sets the padding right property for this rule. */
+        padding-right: 6%;
+    }
+
+    /* Styles the elements matching: .restaurant-grid,.partner-grid */
+    .restaurant-grid,.partner-grid {
+        /* Defines the number and size of grid columns. */
+        grid-template-columns: 1fr;
+    }
+
+    /* Styles the elements matching: .restaurant-card img,.food-card img */
+    .restaurant-card img,.food-card img {
+        /* Sets the element height. */
+        height: 205px;
+    }
+
+    /* Styles the elements matching: .partners-heading h2,.section-heading h2,.how-section h2 */
+    .partners-heading h2,.section-heading h2,.how-section h2 {
+        /* Sets the text size. */
+        font-size: 32px;
+    }
+
+    /* Styles the elements matching: .partner-tag */
+    .partner-tag {
+        /* Sets the align self property for this rule. */
+        align-self: flex-start;
+    }
+
+    /* Styles the elements matching: .footer-links */
+    .footer-links {
+        /* Sets spacing between layout items. */
+        gap: 14px;
+    }
+
+    /* Styles the elements matching: .footer-bottom */
+    .footer-bottom {
+        /* Sets spacing between layout items. */
+        gap: 10px;
+        /* Sets the direction of flex items. */
+        flex-direction: column;
+    }
+
+    /* Styles the elements matching: .cart-box */
+    .cart-box {
+        /* Sets the inside spacing around the element. */
+        padding: 19px;
+        /* Rounds the element corners. */
+        border-radius: 18px;
+    }
+
+}
+
+/* Styles the elements matching: .popular-section */
+.popular-section {
+    /* Sets the inside spacing around the element. */
+    padding: 68px 9%;
+    /* Sets the background colour or image. */
+    background: var(--cream);
+}
+
+/* Styles the elements matching: .popular-heading */
+.popular-heading {
+    /* Controls how this element is laid out or shown. */
+    display: flex;
+    /* Distributes items along the main axis. */
+    justify-content: space-between;
+    /* Aligns items along the cross axis. */
+    align-items: end;
+    /* Sets spacing between layout items. */
+    gap: 20px;
+    /* Sets the margin bottom property for this rule. */
+    margin-bottom: 25px;
+}
+
+/* Styles the elements matching: .popular-heading h2 */
+.popular-heading h2 {
+    /* Sets the font property for this rule. */
+    font: 800 clamp(28px,3vw,38px) Manrope,sans-serif;
+    /* Sets the letter spacing property for this rule. */
+    letter-spacing: -1.5px;
+    /* Sets the outside spacing around the element. */
+    margin: 0 0 8px;
+}
+
+/* Styles the elements matching: .popular-heading h2 span */
+.popular-heading h2 span {
+    /* Sets the text colour. */
+    color: var(--orange);
+}
+
+/* Styles the elements matching: .popular-browse */
+.popular-browse {
+    /* Sets the text size. */
+    font-size: 12px;
+    /* Sets how bold the text appears. */
+    font-weight: 800;
+    /* Sets the text colour. */
+    color: var(--orange);
+    /* Sets the text decoration property for this rule. */
+    text-decoration: none;
+    /* Sets the white space property for this rule. */
+    white-space: nowrap;
+}
+
+/* Styles the elements matching: .popular-grid */
+.popular-grid {
+    /* Controls how this element is laid out or shown. */
+    display: grid;
+    /* Defines the number and size of grid columns. */
+    grid-template-columns: repeat(4,minmax(0,1fr));
+    /* Sets spacing between layout items. */
+    gap: 16px;
+}
+
+/* Styles the elements matching: .popular-card */
+.popular-card {
+    /* Controls how this element is laid out or shown. */
+    display: flex;
+    /* Sets the direction of flex items. */
+    flex-direction: column;
+    /* Controls content that extends outside the element. */
+    overflow: hidden;
+    /* Sets the element border. */
+    border: 1px solid #f0e8e2;
+    /* Rounds the element corners. */
+    border-radius: 18px;
+    /* Sets the background colour or image. */
+    background: #fff;
+    /* Adds a shadow around the element. */
+    box-shadow: 0 7px 24px #29272508;
+    /* Defines how a visual change animates. */
+    transition: .22s;
+}
+
+/* Styles the elements matching: .popular-card:hover */
+.popular-card:hover {
+    /* Moves, rotates or scales the element. */
+    transform: translateY(-5px);
+    /* Adds a shadow around the element. */
+    box-shadow: var(--shadow);
+}
+
+/* Styles the elements matching: .popular-card img */
+.popular-card img {
+    /* Sets the element width. */
+    width: 100%;
+    /* Sets the element height. */
+    height: 145px;
+    /* Sets the object fit property for this rule. */
+    object-fit: cover;
+}
+
+/* Styles the elements matching: .popular-card>div */
+.popular-card>div {
+    /* Sets the inside spacing around the element. */
+    padding: 15px;
+}
+
+/* Styles the elements matching: .popular-card span */
+.popular-card span {
+    /* Sets the text size. */
+    font-size: 9px;
+    /* Sets how bold the text appears. */
+    font-weight: 800;
+    /* Sets the letter spacing property for this rule. */
+    letter-spacing: 1px;
+    /* Sets the text colour. */
+    color: var(--orange);
+}
+
+/* Styles the elements matching: .popular-card h3 */
+.popular-card h3 {
+    /* Sets the font property for this rule. */
+    font: 700 16px Manrope,sans-serif;
+    /* Sets the outside spacing around the element. */
+    margin: 6px 0;
+}
+
+/* Styles the elements matching: .popular-card p */
+.popular-card p {
+    /* Sets the text size. */
+    font-size: 11px;
+    /* Sets the text colour. */
+    color: var(--grey);
+    /* Sets the outside spacing around the element. */
+    margin: 0 0 12px;
+}
+
+/* Styles the elements matching: .popular-card button */
+.popular-card button {
+    /* Sets the element border. */
+    border: 0;
+    /* Sets the background colour or image. */
+    background: transparent;
+    /* Sets the inside spacing around the element. */
+    padding: 0;
+    /* Sets the text colour. */
+    color: var(--dark);
+    /* Sets the text size. */
+    font-size: 11px;
+    /* Sets how bold the text appears. */
+    font-weight: 800;
+}
+
+/* Styles the elements matching: .popular-card button:hover */
+.popular-card button:hover {
+    /* Sets the text colour. */
+    color: var(--orange);
+}
+
+@media (max-width:900px) {
+    /* Styles the elements matching: .popular-grid */
+    .popular-grid {
+        /* Defines the number and size of grid columns. */
+        grid-template-columns: repeat(2,minmax(0,1fr));
+    }
+
+}
+
+@media (max-width:520px) {
+    /* Styles the elements matching: .popular-section */
+    .popular-section {
+        /* Sets the inside spacing around the element. */
+        padding: 48px 6%;
+    }
+
+    /* Styles the elements matching: .popular-heading */
+    .popular-heading {
+        /* Aligns items along the cross axis. */
+        align-items: flex-start;
+        /* Sets the direction of flex items. */
+        flex-direction: column;
+    }
+
+    /* Styles the elements matching: .popular-grid */
+    .popular-grid {
+        /* Defines the number and size of grid columns. */
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /* Styles the elements matching: .popular-card img */
+    .popular-card img {
+        /* Sets the element height. */
+        height: 115px;
+    }
+
+    /* Styles the elements matching: .popular-card>div */
+    .popular-card>div {
+        /* Sets the inside spacing around the element. */
+        padding: 11px;
+    }
+
+    /* Styles the elements matching: .popular-card h3 */
+    .popular-card h3 {
+        /* Sets the text size. */
+        font-size: 13px;
+    }
+
+}
+
+/* ==========================================================================
+   LOGIN, REGISTRATION AND PASSWORD RESET FORMS
+   Original styles retained; grouped here to make each visual section easy to find.
+   ========================================================================== */
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap");
+/* Styles the elements matching: :root */
+:root {
+    /* Stores the shared design value named orange. */
+    --orange: #ef704c;
+    /* Stores the shared design value named dark. */
+    --dark: #292725;
+    /* Stores the shared design value named cream. */
+    --cream: #fff9f4;
+    /* Stores the shared design value named grey. */
+    --grey: #77716d;
+    /* Stores the shared design value named line. */
+    --line: #eee2d9;
+    /* Stores the shared design value named soft. */
+    --soft: #fff0e8;
+}
+
+/* Styles the elements matching: * */
+* {
+    /* Sets the box sizing property for this rule. */
+    box-sizing: border-box;
+}
+
+/* Styles the elements matching: body */
+body {
+    /* Sets the outside spacing around the element. */
+    margin: 0;
+    /* Sets the minimum allowed height. */
+    min-height: 100vh;
+    /* Sets the background colour or image. */
+    background: radial-gradient(circle at 12% 15%,#ef704c1c,transparent 28%),radial-gradient(circle at 88% 85%,#ef704c20,transparent 30%),var(--cream);
+    /* Sets the text colour. */
+    color: var(--dark);
+    /* Chooses the typeface. */
+    font-family: "DM Sans",sans-serif;
+}
+
+/* Styles the elements matching: .auth-top */
+.auth-top {
+    /* Sets the inside spacing around the element. */
+    padding: 25px 7%;
+    /* Controls how this element is laid out or shown. */
+    display: flex;
+    /* Distributes items along the main axis. */
+    justify-content: space-between;
+    /* Aligns items along the cross axis. */
+    align-items: center;
+}
+
+/* Styles the elements matching: .auth-logo */
+.auth-logo {
+    /* Sets the font property for this rule. */
+    font: 800 30px Manrope,sans-serif;
+    /* Sets the letter spacing property for this rule. */
+    letter-spacing: -2px;
+    /* Sets the text decoration property for this rule. */
+    text-decoration: none;
+    /* Sets the text colour. */
+    color: var(--dark);
+}
+
+/* Styles the elements matching: .auth-logo span */
+.auth-logo span {
+    /* Sets the text colour. */
+    color: var(--orange);
+}
+
+/* Styles the elements matching: .back-home */
+.back-home {
+    /* Sets the text size. */
+    font-size: 13px;
+    /* Sets how bold the text appears. */
+    font-weight: 700;
+    /* Sets the text decoration property for this rule. */
+    text-decoration: none;
+    /* Sets the text colour. */
+    color: var(--grey);
+}
+
+/* Styles the elements matching: .back-home:hover */
+.back-home:hover {
+    /* Sets the text colour. */
+    color: var(--orange);
+}
+
+/* Styles the elements matching: .auth-shell */
+.auth-shell {
+    /* Sets the minimum allowed height. */
+    min-height: calc(100vh - 90px);
+    /* Controls how this element is laid out or shown. */
+    display: grid;
+    /* Sets the place items property for this rule. */
+    place-items: center;
+    /* Sets the inside spacing around the element. */
+    padding: 20px;
+}
+
+/* Styles the elements matching: .auth-card */
+.auth-card {
+    /* Sets the element width. */
+    width: min(100%,470px);
+    /* Sets the inside spacing around the element. */
+    padding: 42px;
+    /* Sets the background colour or image. */
+    background: rgba(255,255,255,.78);
+    /* Sets the backdrop filter property for this rule. */
+    backdrop-filter: blur(18px);
+    /* Sets the element border. */
+    border: 1px solid #fff;
+    /* Rounds the element corners. */
+    border-radius: 28px;
+    /* Adds a shadow around the element. */
+    box-shadow: 0 25px 80px #51332112;
+}
+
+/* Styles the elements matching: .auth-kicker */
+.auth-kicker {
+    /* Sets the text colour. */
+    color: var(--orange);
+    /* Sets the text size. */
+    font-size: 10px;
+    /* Sets how bold the text appears. */
+    font-weight: 800;
+    /* Sets the letter spacing property for this rule. */
+    letter-spacing: 2px;
+    /* Sets the outside spacing around the element. */
+    margin: 0 0 10px;
+}
+
+/* Styles the elements matching: .auth-card h1 */
+.auth-card h1 {
+    /* Sets the font property for this rule. */
+    font: 800 34px Manrope,sans-serif;
+    /* Sets the letter spacing property for this rule. */
+    letter-spacing: -1.5px;
+    /* Sets the outside spacing around the element. */
+    margin: 0 0 8px;
+}
+
+/* Styles the elements matching: .auth-intro */
+.auth-intro {
+    /* Sets the text size. */
+    font-size: 13px;
+    /* Sets the text colour. */
+    color: var(--grey);
+    /* Sets the outside spacing around the element. */
+    margin: 0 0 28px;
+    /* Sets the vertical spacing between lines. */
+    line-height: 1.65;
+}
+
+/* Styles the elements matching: .field */
+.field {
+    /* Sets the outside spacing around the element. */
+    margin: 16px 0;
+}
+
+/* Styles the elements matching: .field label */
+.field label {
+    /* Controls how this element is laid out or shown. */
+    display: block;
+    /* Sets the text size. */
+    font-size: 12px;
+    /* Sets how bold the text appears. */
+    font-weight: 800;
+    /* Sets the outside spacing around the element. */
+    margin: 0 0 7px;
+}
+
+/* Styles the elements matching: .field input,.field textarea,.field select */
+.field input,.field textarea,.field select {
+    /* Sets the element width. */
+    width: 100%;
+    /* Sets the inside spacing around the element. */
+    padding: 14px 15px;
+    /* Sets the element border. */
+    border: 1px solid var(--line);
+    /* Rounds the element corners. */
+    border-radius: 13px;
+    /* Sets the background colour or image. */
+    background: #fff;
+    /* Sets the text colour. */
+    color: var(--dark);
+    /* Sets the font property for this rule. */
+    font: 13px "DM Sans",sans-serif;
+    /* Sets the outline property for this rule. */
+    outline: 0;
+    /* Defines how a visual change animates. */
+    transition: border .2s,box-shadow .2s;
+}
+
+/* Styles the elements matching: .field input:focus,.field textarea:focus,.field select:focus */
+.field input:focus,.field textarea:focus,.field select:focus {
+    /* Sets the border color property for this rule. */
+    border-color: var(--orange);
+    /* Adds a shadow around the element. */
+    box-shadow: 0 0 0 4px #ef704c18;
+}
+
+/* Styles the elements matching: .password-wrap */
+.password-wrap {
+    /* Controls the element positioning method. */
+    position: relative;
+}
+
+/* Styles the elements matching: .password-wrap input */
+.password-wrap input {
+    /* Sets the padding right property for this rule. */
+    padding-right: 76px;
+}
+
+/* Styles the elements matching: .toggle-password */
+.toggle-password {
+    /* Controls the element positioning method. */
+    position: absolute;
+    /* Sets the right property for this rule. */
+    right: 12px;
+    /* Sets the top property for this rule. */
+    top: 50%;
+    /* Moves, rotates or scales the element. */
+    transform: translateY(-50%);
+    /* Sets the element border. */
+    border: 0;
+    /* Sets the background colour or image. */
+    background: transparent;
+    /* Sets the text colour. */
+    color: var(--orange);
+    /* Sets the text size. */
+    font-size: 11px;
+    /* Sets how bold the text appears. */
+    font-weight: 800;
+}
+
+/* Styles the elements matching: .form-row */
+.form-row {
+    /* Controls how this element is laid out or shown. */
+    display: flex;
+    /* Distributes items along the main axis. */
+    justify-content: space-between;
+    /* Aligns items along the cross axis. */
+    align-items: center;
+    /* Sets spacing between layout items. */
+    gap: 12px;
+    /* Sets the outside spacing around the element. */
+    margin: 13px 0 20px;
+    /* Sets the text size. */
+    font-size: 12px;
+}
+
+/* Styles the elements matching: .check-label */
+.check-label {
+    /* Controls how this element is laid out or shown. */
+    display: flex;
+    /* Aligns items along the cross axis. */
+    align-items: center;
+    /* Sets spacing between layout items. */
+    gap: 8px;
+    /* Sets the text colour. */
+    color: var(--grey);
+}
+
+/* Styles the elements matching: .check-label input */
+.check-label input {
+    /* Sets the accent color property for this rule. */
+    accent-color: var(--orange);
+}
+
+/* Styles the elements matching: .auth-link */
+.auth-link {
+    /* Sets the text colour. */
+    color: var(--orange);
+    /* Sets how bold the text appears. */
+    font-weight: 800;
+    /* Sets the text decoration property for this rule. */
+    text-decoration: none;
+}
+
+/* Styles the elements matching: .auth-link:hover */
+.auth-link:hover {
+    /* Sets the text decoration property for this rule. */
+    text-decoration: underline;
+}
+
+/* Styles the elements matching: .auth-submit */
+.auth-submit {
+    /* Sets the element width. */
+    width: 100%;
+    /* Sets the inside spacing around the element. */
+    padding: 15px;
+    /* Sets the element border. */
+    border: 0;
+    /* Rounds the element corners. */
+    border-radius: 13px;
+    /* Sets the background colour or image. */
+    background: linear-gradient(110deg,#ef704c,#e65e3b);
+    /* Sets the text colour. */
+    color: white;
+    /* Sets how bold the text appears. */
+    font-weight: 800;
+    /* Adds a shadow around the element. */
+    box-shadow: 0 10px 23px #ef704c35;
+    /* Defines how a visual change animates. */
+    transition: .2s;
+}
+
+/* Styles the elements matching: .auth-submit:hover */
+.auth-submit:hover {
+    /* Moves, rotates or scales the element. */
+    transform: translateY(-2px);
+    /* Adds a shadow around the element. */
+    box-shadow: 0 14px 28px #ef704c4a;
+}
+
+/* Styles the elements matching: .auth-switch */
+.auth-switch {
+    /* Sets horizontal text alignment. */
+    text-align: center;
+    /* Sets the text size. */
+    font-size: 12px;
+    /* Sets the text colour. */
+    color: var(--grey);
+    /* Sets the outside spacing around the element. */
+    margin: 21px 0 0;
+}
+
+/* Styles the elements matching: .auth-help */
+.auth-help {
+    /* Sets horizontal text alignment. */
+    text-align: center;
+    /* Sets the outside spacing around the element. */
+    margin: 18px 0 0;
+    /* Sets the text size. */
+    font-size: 12px;
+}
+
+/* Styles the elements matching: .auth-help a */
+.auth-help a {
+    /* Sets the text colour. */
+    color: var(--grey);
+    /* Sets the text decoration property for this rule. */
+    text-decoration: none;
+}
+
+/* Styles the elements matching: .auth-help a:hover */
+.auth-help a:hover {
+    /* Sets the text colour. */
+    color: var(--orange);
+}
+
+/* Styles the elements matching: .message */
+.message {
+    /* Controls how this element is laid out or shown. */
+    display: none;
+    /* Sets the inside spacing around the element. */
+    padding: 12px 14px;
+    /* Rounds the element corners. */
+    border-radius: 11px;
+    /* Sets the outside spacing around the element. */
+    margin: 14px 0;
+    /* Sets the text size. */
+    font-size: 12px;
+    /* Sets the vertical spacing between lines. */
+    line-height: 1.5;
+}
+
+/* Styles the elements matching: .message.error */
+.message.error {
+    /* Controls how this element is laid out or shown. */
+    display: block;
+    /* Sets the background colour or image. */
+    background: #fff0ee;
+    /* Sets the text colour. */
+    color: #a33c2a;
+    /* Sets the element border. */
+    border: 1px solid #f3c7bd;
+}
+
+/* Styles the elements matching: .message.success */
+.message.success {
+    /* Controls how this element is laid out or shown. */
+    display: block;
+    /* Sets the background colour or image. */
+    background: #edf8f0;
+    /* Sets the text colour. */
+    color: #27653b;
+    /* Sets the element border. */
+    border: 1px solid #c9e8d1;
+}
+
+/* Styles the elements matching: .terms */
+.terms {
+    /* Aligns items along the cross axis. */
+    align-items: flex-start;
+    /* Sets the vertical spacing between lines. */
+    line-height: 1.5;
+    /* Sets the outside spacing around the element. */
+    margin: 17px 0;
+}
+
+/* Styles the elements matching: .terms input */
+.terms input {
+    /* Sets the margin top property for this rule. */
+    margin-top: 3px;
+}
+
+@media (max-width:520px) {
+    /* Styles the elements matching: .auth-top */
+    .auth-top {
+        /* Sets the inside spacing around the element. */
+        padding: 19px 6%;
+    }
+
+    /* Styles the elements matching: .auth-card */
+    .auth-card {
+        /* Sets the inside spacing around the element. */
+        padding: 29px 22px;
+        /* Rounds the element corners. */
+        border-radius: 22px;
+    }
+
+    /* Styles the elements matching: .auth-card h1 */
+    .auth-card h1 {
+        /* Sets the text size. */
+        font-size: 29px;
+    }
+
+    /* Styles the elements matching: .auth-shell */
+    .auth-shell {
+        /* Sets the inside spacing around the element. */
+        padding: 10px;
+    }
+
+    /* Styles the elements matching: .form-row */
+    .form-row {
+        /* Aligns items along the cross axis. */
+        align-items: flex-start;
+    }
+
+}
+
+/* ==========================================================================
+   HELP CENTRE, FAQ AND SUPPORT FORM
+   Original styles retained; grouped here to make each visual section easy to find.
+   ========================================================================== */
+/* Styles the elements matching: .help-hero */
+.help-hero {
+    /* Sets the inside spacing around the element. */
+    padding: 66px 8% 58px;
+    /* Sets horizontal text alignment. */
+    text-align: center;
+    /* Sets the background colour or image. */
+    background: linear-gradient(135deg,#fff2eb,#fff9f4 60%,#ffede4);
+}
+
+/* Styles the elements matching: .help-hero h1 */
+.help-hero h1 {
+    /* Sets the font property for this rule. */
+    font: 800 clamp(36px,5vw,55px) Manrope,sans-serif;
+    /* Sets the letter spacing property for this rule. */
+    letter-spacing: -2px;
+    /* Sets the outside spacing around the element. */
+    margin: 0 0 12px;
+}
+
+/* Styles the elements matching: .help-hero p */
+.help-hero p {
+    /* Sets the text colour. */
+    color: var(--grey);
+    /* Sets the maximum allowed width. */
+    max-width: 600px;
+    /* Sets the outside spacing around the element. */
+    margin: auto;
+    /* Sets the text size. */
+    font-size: 14px;
+}
+
+/* Styles the elements matching: .help-wrap */
+.help-wrap {
+    /* Sets the maximum allowed width. */
+    max-width: 1150px;
+    /* Sets the outside spacing around the element. */
+    margin: auto;
+    /* Sets the inside spacing around the element. */
+    padding: 55px 6% 85px;
+}
+
+/* Styles the elements matching: .help-title */
+.help-title {
+    /* Sets the font property for this rule. */
+    font: 800 27px Manrope,sans-serif;
+    /* Sets the letter spacing property for this rule. */
+    letter-spacing: -1px;
+    /* Sets the outside spacing around the element. */
+    margin: 0 0 8px;
+}
+
+/* Styles the elements matching: .help-subtitle */
+.help-subtitle {
+    /* Sets the text colour. */
+    color: var(--grey);
+    /* Sets the text size. */
+    font-size: 13px;
+    /* Sets the outside spacing around the element. */
+    margin: 0 0 25px;
+}
+
+/* Styles the elements matching: .problem-grid */
+.problem-grid {
+    /* Controls how this element is laid out or shown. */
+    display: grid;
+    /* Defines the number and size of grid columns. */
+    grid-template-columns: repeat(4,1fr);
+    /* Sets spacing between layout items. */
+    gap: 12px;
+    /* Sets the margin bottom property for this rule. */
+    margin-bottom: 55px;
+}
+
+/* Styles the elements matching: .problem-chip */
+.problem-chip {
+    /* Sets the inside spacing around the element. */
+    padding: 17px 13px;
+    /* Sets the element border. */
+    border: 1px solid var(--line);
+    /* Rounds the element corners. */
+    border-radius: 15px;
+    /* Sets the background colour or image. */
+    background: #fff;
+    /* Sets horizontal text alignment. */
+    text-align: left;
+    /* Sets how bold the text appears. */
+    font-weight: 700;
+    /* Sets the text size. */
+    font-size: 12px;
+    /* Sets the text colour. */
+    color: var(--dark);
+    /* Defines how a visual change animates. */
+    transition: .2s;
+}
+
+/* Styles the elements matching: .problem-chip span */
+.problem-chip span {
+    /* Controls how this element is laid out or shown. */
+    display: block;
+    /* Sets the text size. */
+    font-size: 21px;
+    /* Sets the margin bottom property for this rule. */
+    margin-bottom: 8px;
+}
+
+/* Styles the elements matching: .problem-chip:hover,.problem-chip.active */
+.problem-chip:hover,.problem-chip.active {
+    /* Sets the border color property for this rule. */
+    border-color: var(--orange);
+    /* Sets the background colour or image. */
+    background: #fff3ed;
+    /* Sets the text colour. */
+    color: var(--orange);
+    /* Moves, rotates or scales the element. */
+    transform: translateY(-2px);
+}
+
+/* Styles the elements matching: .faq-layout */
+.faq-layout {
+    /* Controls how this element is laid out or shown. */
+    display: grid;
+    /* Defines the number and size of grid columns. */
+    grid-template-columns: 1fr 1fr;
+    /* Sets spacing between layout items. */
+    gap: 35px;
+    /* Sets the margin bottom property for this rule. */
+    margin-bottom: 60px;
+}
+
+/* Styles the elements matching: .faq-group h3 */
+.faq-group h3 {
+    /* Sets the font property for this rule. */
+    font: 700 16px Manrope,sans-serif;
+    /* Sets the outside spacing around the element. */
+    margin: 0 0 13px;
+}
+
+/* Styles the elements matching: .faq-item */
+.faq-item {
+    /* Sets the element border. */
+    border: 1px solid var(--line);
+    /* Rounds the element corners. */
+    border-radius: 13px;
+    /* Sets the background colour or image. */
+    background: #fff;
+    /* Sets the outside spacing around the element. */
+    margin: 9px 0;
+    /* Controls content that extends outside the element. */
+    overflow: hidden;
+}
+
+/* Styles the elements matching: .faq-question */
+.faq-question {
+    /* Sets the element width. */
+    width: 100%;
+    /* Controls how this element is laid out or shown. */
+    display: flex;
+    /* Distributes items along the main axis. */
+    justify-content: space-between;
+    /* Sets spacing between layout items. */
+    gap: 15px;
+    /* Aligns items along the cross axis. */
+    align-items: center;
+    /* Sets the inside spacing around the element. */
+    padding: 15px;
+    /* Sets the element border. */
+    border: 0;
+    /* Sets the background colour or image. */
+    background: transparent;
+    /* Sets horizontal text alignment. */
+    text-align: left;
+    /* Sets the text colour. */
+    color: var(--dark);
+    /* Sets how bold the text appears. */
+    font-weight: 700;
+    /* Sets the text size. */
+    font-size: 12px;
+}
+
+/* Styles the elements matching: .faq-question span:last-child */
+.faq-question span:last-child {
+    /* Sets the text colour. */
+    color: var(--orange);
+    /* Sets the text size. */
+    font-size: 18px;
+}
+
+/* Styles the elements matching: .faq-answer */
+.faq-answer {
+    /* Controls how this element is laid out or shown. */
+    display: none;
+    /* Sets the inside spacing around the element. */
+    padding: 0 15px 15px;
+    /* Sets the text colour. */
+    color: var(--grey);
+    /* Sets the text size. */
+    font-size: 12px;
+    /* Sets the vertical spacing between lines. */
+    line-height: 1.7;
+}
+
+/* Styles the elements matching: .faq-item.open .faq-answer */
+.faq-item.open .faq-answer {
+    /* Controls how this element is laid out or shown. */
+    display: block;
+}
+
+/* Styles the elements matching: .faq-item.open .faq-question span:last-child */
+.faq-item.open .faq-question span:last-child {
+    /* Moves, rotates or scales the element. */
+    transform: rotate(45deg);
+}
+
+/* Styles the elements matching: .support-panel */
+.support-panel {
+    /* Controls how this element is laid out or shown. */
+    display: grid;
+    /* Defines the number and size of grid columns. */
+    grid-template-columns: .8fr 1.2fr;
+    /* Sets spacing between layout items. */
+    gap: 35px;
+    /* Sets the inside spacing around the element. */
+    padding: 30px;
+    /* Rounds the element corners. */
+    border-radius: 22px;
+    /* Sets the background colour or image. */
+    background: #fff;
+    /* Sets the element border. */
+    border: 1px solid var(--line);
+    /* Adds a shadow around the element. */
+    box-shadow: 0 15px 40px #29272508;
+}
+
+/* Styles the elements matching: .support-copy */
+.support-copy {
+    /* Sets the inside spacing around the element. */
+    padding: 10px;
+}
+
+/* Styles the elements matching: .support-copy h2 */
+.support-copy h2 {
+    /* Sets the font property for this rule. */
+    font: 800 29px Manrope,sans-serif;
+    /* Sets the letter spacing property for this rule. */
+    letter-spacing: -1px;
+    /* Sets the outside spacing around the element. */
+    margin: 0 0 12px;
+}
+
+/* Styles the elements matching: .support-copy p */
+.support-copy p {
+    /* Sets the text colour. */
+    color: var(--grey);
+    /* Sets the text size. */
+    font-size: 13px;
+    /* Sets the vertical spacing between lines. */
+    line-height: 1.7;
+}
+
+/* Styles the elements matching: .support-copy a */
+.support-copy a {
+    /* Sets the text colour. */
+    color: var(--orange);
+    /* Sets how bold the text appears. */
+    font-weight: 800;
+    /* Sets the text decoration property for this rule. */
+    text-decoration: none;
+}
+
+/* Styles the elements matching: .support-form .field */
+.support-form .field {
+    /* Sets the outside spacing around the element. */
+    margin: 12px 0;
+}
+
+/* Styles the elements matching: .support-form .field input,.support-form .field select,.support-form .field textarea */
+.support-form .field input,.support-form .field select,.support-form .field textarea {
+    /* Sets the background colour or image. */
+    background: #fff;
+}
+
+/* Styles the elements matching: .support-form textarea */
+.support-form textarea {
+    /* Sets the minimum allowed height. */
+    min-height: 115px;
+    /* Sets the resize property for this rule. */
+    resize: vertical;
+}
+
+/* Styles the elements matching: .support-form .auth-submit */
+.support-form .auth-submit {
+    /* Sets the margin top property for this rule. */
+    margin-top: 5px;
+}
+
+/* Styles the elements matching: .help-footer */
+.help-footer {
+    /* Sets horizontal text alignment. */
+    text-align: center;
+    /* Sets the inside spacing around the element. */
+    padding: 24px;
+    /* Sets the background colour or image. */
+    background: var(--dark);
+    /* Sets the text colour. */
+    color: #d6cec8;
+    /* Sets the text size. */
+    font-size: 11px;
+}
+
+/* Styles the elements matching: .help-footer a */
+.help-footer a {
+    /* Sets the text colour. */
+    color: #fff;
+    /* Sets the text decoration property for this rule. */
+    text-decoration: none;
+}
+
+@media (max-width:800px) {
+    /* Styles the elements matching: .problem-grid */
+    .problem-grid {
+        /* Defines the number and size of grid columns. */
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    /* Styles the elements matching: .faq-layout,.support-panel */
+    .faq-layout,.support-panel {
+        /* Defines the number and size of grid columns. */
+        grid-template-columns: 1fr;
+    }
+
+    /* Styles the elements matching: .support-panel */
+    .support-panel {
+        /* Sets the inside spacing around the element. */
+        padding: 22px;
+    }
+
+    /* Styles the elements matching: .help-wrap */
+    .help-wrap {
+        /* Sets the padding top property for this rule. */
+        padding-top: 40px;
+    }
+
+}
+
+@media (max-width:450px) {
+    /* Styles the elements matching: .problem-grid */
+    .problem-grid {
+        /* Defines the number and size of grid columns. */
+        grid-template-columns: 1fr 1fr;
+        /* Sets spacing between layout items. */
+        gap: 8px;
+    }
+
+    /* Styles the elements matching: .problem-chip */
+    .problem-chip {
+        /* Sets the inside spacing around the element. */
+        padding: 13px 10px;
+        /* Sets the text size. */
+        font-size: 11px;
+    }
+
+    /* Styles the elements matching: .help-hero */
+    .help-hero {
+        /* Sets the inside spacing around the element. */
+        padding: 48px 6%;
+    }
+
+    /* Styles the elements matching: .help-wrap */
+    .help-wrap {
+        /* Sets the padding left property for this rule. */
+        padding-left: 5%;
+        /* Sets the padding right property for this rule. */
+        padding-right: 5%;
+    }
+
+}
